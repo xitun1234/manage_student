@@ -1,0 +1,64 @@
+{% extends 'pages/base.html' %}
+{% load static %}
+{% block title %}Thêm Giáo Viên Mới{% endblock  %}
+{% block content %}
+    <div class="page-wrapper">
+        <!-- ============================================================== -->
+        <!-- Bread crumb and right sidebar toggle -->
+        <!-- ============================================================== -->
+        <div class="page-breadcrumb bg-white">
+            <div class="row align-items-center">
+                <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                    <h4 class="page-title">Thêm Giáo Viên Mới</h4>
+                </div>
+                <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+                    <div class="d-md-flex">
+                        <ol class="breadcrumb ms-auto">
+                            <li>
+                                <a href="#" class="fw-normal">{{user.username}}</a>
+                            </li>
+                        </ol>
+                        
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+
+        <div class="container-fluid">
+            
+            <div class="row">
+                <div class="card">
+                    <div class="card-body">
+                      <form action="" method="post">
+                        {% csrf_token %}
+                        {{form.as_p}}
+                        <!-- <label for="">Username</label>
+                          <p>{{f.username}}</p>
+                          <label for="">Password</label>
+                          <p>{{f.password}}</p>
+                          <label for="">Email</label>
+                          <p>{{f.email}}</p>
+                          <label for="">Họ</label>
+                          <p>{{f.first_name}}</p>
+                          <label for="">Tên</label>
+                          <p>{{f.last_name}}</p>
+                          <label for="">Số Điện Thoại</label>
+                          <p>{{f.phoneNumber}}</p>
+                          <label for=""><h4 class="text-primary text-bold">Đảm Nhận Vị Trí Giáo Viên Chủ Nhiệm</h4></label>
+                          <p>{{f.isGVCN}}</p> -->
+                          
+                          <button type="submit" class="btn btn-primary btn-lg">Thêm</button>
+                          
+                          
+                      </form>
+                    </div>
+                  </div>
+            </div>
+
+            
+        </div>
+        
+    </div>
+{% endblock  %}
+

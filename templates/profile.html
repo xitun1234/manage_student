@@ -1,0 +1,144 @@
+{% extends 'pages/base.html' %}
+{% load static %}
+{% block title %}Profile{% endblock  %}
+{% block content %}
+    <div class="page-wrapper">
+        <!-- ============================================================== -->
+        <!-- Bread crumb and right sidebar toggle -->
+        <!-- ============================================================== -->
+        <div class="page-breadcrumb bg-white">
+            <div class="row align-items-center">
+                <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                    <h4 class="page-title">Trang Cá Nhân</h4>
+                </div>
+                <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+                    <div class="d-md-flex">
+                        <ol class="breadcrumb ms-auto">
+                            <li>
+                                <a href="#" class="fw-normal">{{user.username}}</a>
+                            </li>
+                        </ol>
+                        
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Bread crumb and right sidebar toggle -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Container fluid  -->
+        <!-- ============================================================== -->
+        <div class="container-fluid">
+            <!-- ============================================================== -->
+            <!-- Three charts -->
+            <!-- ============================================================== -->
+
+            <!-- ============================================================== -->
+            <!-- PRODUCTS YEARLY SALES -->
+            <!-- ============================================================== -->
+            <div class="row">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h4>Hồ sơ của bạn</h4>
+                                <hr>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <form>
+                                  <div class="form-group row">
+                                    <label for="username" class="col-4 col-form-label">Username*</label> 
+                                    <div class="col-8">
+                                      <input id="username" name="username" placeholder="Username" class="form-control here" required="required" type="text" value = {{user.username}}>
+                                    </div>
+                                  </div>
+                                  <div class="form-group row">
+                                    <label for="name" class="col-4 col-form-label">Họ:</label> 
+                                    <div class="col-8">
+                                      <input id="name" name="name" placeholder="First Name" class="form-control here" type="text" value = {{user.first_name}}>
+                                    </div>
+                                  </div>
+                                  <div class="form-group row">
+                                    <label for="lastname" class="col-4 col-form-label">Tên:</label> 
+                                    <div class="col-8">
+                                      <input id="lastname" name="lastname" placeholder="Last Name" class="form-control here" type="text" value = {{user.last_name}}>
+                                    </div>
+                                  </div>
+
+                                  <div class="form-group row">
+                                    <label for="address" class="col-4 col-form-label">Địa chỉ:</label> 
+                                    <div class="col-8">
+                                      <input id="diaChi" name="diaChi" placeholder="diaChi" class="form-control here" type="text" value = {{user.address}}>
+                                    </div>
+                                  </div>
+
+                                  
+                                  
+                                  <div class="form-group row">
+                                    <label for="email" class="col-4 col-form-label">Email*</label> 
+                                    <div class="col-8">
+                                      <input id="email" name="email" placeholder="Email" class="form-control here" required="required" type="text" value= {{user.email}}>
+                                    </div>
+                                  </div>
+                                  
+
+                                  
+
+                                  <div class="form-group row">
+                                    <label for="website" class="col-4 col-form-label">Lần Đăng Nhập Cuối</label> 
+                                    <div class="col-8">
+                                        <p>{{user.last_login}}</p>
+                                      
+                                    </div>
+                                  </div>
+                                  <div class="form-group row">
+                                    <label for="website" class="col-4 col-form-label">Đăng Ký Lúc: </label> 
+                                    <div class="col-8">
+                                        <p>{{user.date_joined}}</p>
+                                      
+                                    </div>
+                                  </div>
+
+                                  <div class="form-group row">
+                                    <label for="website" class="col-4 col-form-label"></label> 
+                                    <div class="col-8">
+                                        {% if user.isGVCN == True %}
+                                        <p class="text-success">Là Giáo Viên Chủ Nhiệm</p>
+                                        {% endif %}
+                                       
+                                      
+                                    </div>
+                                  </div>
+
+                                  {% comment %} <div class="form-group row">
+                                    <label for="newpass" class="col-4 col-form-label">Mật Khẩu Mới</label> 
+                                    <div class="col-8">
+                                      <input id="newpass" name="newpass" placeholder="New Password" class="form-control here" type="text">
+                                    </div>
+                                  </div>  {% endcomment %}
+                                  {% comment %} <div class="form-group row">
+                                    <div class="offset-4 col-8">
+                                        <form method="post">{% csrf_token %}
+                                            {{ form.as_p }}
+                                            <input type="submit" value="Update">
+                                        </form>
+                                      
+                                    </div>
+                                  </div> {% endcomment %}
+                                </form>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        
+    </div>
+{% endblock  %}
+
