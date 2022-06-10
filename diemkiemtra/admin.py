@@ -4,3 +4,4 @@ from .models import LoaiKiemTra,Kiemtra,KetQua_KiemTra
 admin.site.register(LoaiKiemTra)
 admin.site.register(Kiemtra)
 admin.site.register(KetQua_KiemTra)
+###
